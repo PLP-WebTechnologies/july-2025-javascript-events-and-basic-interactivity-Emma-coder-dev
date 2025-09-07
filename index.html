@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page with JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Theme Toggle -->
+    <header class="header">
+        <div class="container">
+            <h1>Interactive Web Experience</h1>
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Interactive Counter Game Section -->
+            <section class="section" id="counterSection">
+                <h2>🎮 Interactive Counter Game</h2>
+                <div class="counter-game">
+                    <div class="counter-display">
+                        <span id="counterValue">0</span>
+                    </div>
+                    <div class="counter-controls">
+                        <button id="decrementBtn" class="btn btn-danger">-</button>
+                        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                        <button id="incrementBtn" class="btn btn-success">+</button>
+                    </div>
+                    <div class="counter-message" id="counterMessage"></div>
+                </div>
+            </section>
+
+            <!-- Collapsible FAQ Section -->
+            <section class="section" id="faqSection">
+                <h2>❓ Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" data-target="faq1">
+                            What is JavaScript used for?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq1">
+                            <p>JavaScript is a programming language that makes web pages interactive. It can respond to user actions, update content dynamically, validate forms, create animations, and much more!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" data-target="faq2">
+                            How do event listeners work?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq2">
+                            <p>Event listeners are functions that wait for specific events (like clicks, key presses, or form submissions) and then execute code in response. They make web pages interactive and responsive to user actions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" data-target="faq3">
+                            What is DOM manipulation?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq3">
+                            <p>DOM (Document Object Model) manipulation is the process of changing HTML elements, their content, attributes, or styles using JavaScript. It allows you to create dynamic and interactive web experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Validation Section -->
+            <section class="section" id="formSection">
+                <h2>📋 User Registration Form</h2>
+                <form id="registrationForm" class="registration-form" novalidate>
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password">
+                        <span class="error-message" id="passwordError"></span>
+                        <div class="password-requirements">
+                            <small>Password must be at least 8 characters with uppercase, lowercase, number, and special character</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" placeholder="Enter your age" min="13" max="120">
+                        <span class="error-message" id="ageError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms">
+                            <span class="checkmark"></span>
+                            I agree to the Terms and Conditions *
+                        </label>
+                        <span class="error-message" id="termsError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">Register</button>
+                </form>
+
+                <div id="formSuccess" class="success-message" style="display: none;">
+                    <h3>🎉 Registration Successful!</h3>
+                    <p>Thank you for registering. Your account has been created successfully.</p>
+                </div>
+            </section>
+
+            <!-- Interactive Tabbed Interface -->
+            <section class="section" id="tabsSection">
+                <h2>📑 Tabbed Interface</h2>
+                <div class="tabs-container">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="tab1">Home</button>
+                        <button class="tab-btn" data-tab="tab2">About</button>
+                        <button class="tab-btn" data-tab="tab3">Contact</button>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tab-panel active" id="tab1">
+                            <h3>Welcome Home!</h3>
+                            <p>This is the home tab content. Here you can find general information about our interactive web page.</p>
+                            <p>Try clicking on the other tabs to see the content change dynamically!</p>
+                        </div>
+                        <div class="tab-panel" id="tab2">
+                            <h3>About Us</h3>
+                            <p>This is the about tab. We're passionate about creating interactive web experiences using JavaScript.</p>
+                            <p>Our goal is to make web pages that respond to user interactions in meaningful ways.</p>
+                        </div>
+                        <div class="tab-panel" id="tab3">
+                            <h3>Contact Information</h3>
+                            <p>Get in touch with us through the contact form above or reach out directly.</p>
+                            <p>We'd love to hear your feedback about this interactive experience!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Interactive Web Page. Built with HTML, CSS, and JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
